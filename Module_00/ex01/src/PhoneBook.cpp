@@ -1,0 +1,194 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/10 12:58:51 by pmoreira          #+#    #+#             */
+/*   Updated: 2025/10/13 17:20:25 by pmoreira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../include/PhoneBook.hpp"
+
+PhoneBook::PhoneBook()
+{
+	std::cout << "PhoneBook default constructor called." << std::endl;
+}
+
+PhoneBook::PhoneBook(const PhoneBook& og)
+{
+	*this= og;
+	std::cout << "PhoneBook copy constructor called." << std::endl;
+}
+
+PhoneBook& PhoneBook::operator=(const PhoneBook& og)
+{
+	if (this != &og)
+	{
+		int	i;
+		
+		i = -1;
+		while (++i < 8)
+			this->_list[i] = og._list[i];
+		std::cout << "PhoneBook copy assignment operator called." << std::endl;
+	}
+	else
+		std::cout << "Copy called to the same object. No actions are made." << std::endl;
+	return (*this);
+}
+
+std::string fill_value(std::string query)
+{
+	std::string input;
+
+	std::cout << query;
+	std::getline(std::cin, input);
+	return (input);
+}
+
+bool valid_input(std::string str)
+{
+	size_t	len;
+
+	len = 0;
+	if (str.empty())
+		return (false);
+	while (len < str.length())
+	{
+		if (!std::isalpha(str[len]))
+			return (false);
+		len++;
+	}
+	return (true);
+}
+
+bool valid_number(std::string str)
+{
+	size_t	len;
+
+	len = 0;
+	if (str.empty())
+		return (false);
+	if (str[len] == '+')
+		len++;
+	while (len < str.length())
+	{
+		if (!std::isdigit(str[len]))
+			return (false);
+		len++;
+	}
+	return (true);
+}
+
+bool valid_secret(std::string str)
+{
+	size_t	len;
+
+	len = 0;
+	if (str.empty())
+		return (false);
+	if (str[len] == '+')
+		len++;
+	while (len < str.length())
+	{
+		if (!std::isprint(str[len]))
+			return (false);
+		len++;
+	}
+	return (true);
+}
+
+void PhoneBook::setContact(int index)
+{
+	std::string input;
+
+	input.clear();
+	while (std::cin && !valid_input(input))
+		input = fill_value("Enter First Name: ");
+	this->_list[index].setFirstName(input);
+	input.clear();
+	while (std::cin && !valid_input(input))
+		input = fill_value("Enter Last Name: ");
+	this->_list[index].setLastName(input);
+	input.clear();
+	while (std::cin && !valid_input(input))
+		input = fill_value("Enter Nickname: ");
+	this->_list[index].setNickname(input);
+	input.clear();
+	while (std::cin && !valid_number(input))
+		input = fill_value("Enter Phone Number: ");
+	this->_list[index].setNumber(input);
+	input.clear();
+	while (std::cin && !valid_secret(input))
+		input = fill_value("Enter Darkest Secret: ");
+	if (input.empty())
+		input = "I'm an open book.";
+	this->_list[index].setSecret(input);
+}
+
+void PhoneBook::getContact(int index)
+{
+	std::cout << "----------------Contact Info----------------" << std::endl;
+	std::cout << "First name : "<< this->_list[index].getFirstName() << std::endl;
+	std::cout << "Last name : "<< this->_list[index].getLastName() << std::endl;
+	std::cout << "Nickname : "<< this->_list[index].getNickname() << std::endl;
+	std::cout << "Phone Number : "<< this->_list[index].getNumber() << std::endl;
+	std::cout << "Darkest Secret : "<< this->_list[index].getSecret() << std::endl;
+	std::cout << "--------------------------------------------" << std::endl;
+}
+
+std::string truncate_str(std::string text)
+{
+	std::string temp;
+
+	temp = text.substr(0, 10);
+	if (text.length() > 10)
+		temp[9] = '.';
+	return (temp);
+}
+
+void PhoneBook::printInfo(int counter)
+{
+	std::string index;
+
+	std::cout << "Choose a index between 0 and 7." << std::endl;
+	std::getline(std::cin, index);
+	if (index.empty())
+		std::cout << "Empty field. Misuse of the command." << std::endl;
+	else
+	{
+		if (index.length() != 1 || !(index[0] >= '0' && index[0] <= '7'))
+			std::cout << "Invalid index. Misuse of the command." << std::endl;
+		else
+		{
+			if (index[0] - '0' <= counter)
+				this->getContact(index[0] - '0');
+			else
+				std::cout << "Empty contact. Do more networking!" << std::endl;
+		}
+	}
+}
+
+void PhoneBook::getTable(int index, int counter)
+{
+	int	i;
+
+	i = -1;
+	if (index == -1)
+		std::cout << "No contacts saved on the phonebook." << std::endl;
+	else
+	{
+		std::cout << "-----Index------First-------Last---Nickname-" << std::endl;
+		while (++i <= index)
+		{
+			std::cout << std::setw(10) << i << "|";
+			std::cout << std::setw(10) << truncate_str(this->_list[i].getFirstName()) << "|";
+			std::cout << std::setw(10) << truncate_str(this->_list[i].getLastName()) << "|";
+			std::cout << std::setw(10) << truncate_str(this->_list[i].getNickname()) << "|" << std::endl;
+			std::cout << "--------------------------------------------" << std::endl;
+		}
+		this->printInfo(counter);
+	}
+}
