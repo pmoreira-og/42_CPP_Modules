@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:59:58 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/10/13 17:17:10 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:41:55 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,36 +17,9 @@ Contact::Contact()
 	std::cout << "Contact default constructor called." << std::endl;
 }
 
-Contact::Contact(std::string number, std::string first, std::string last, std::string nick, std::string secret): _number(number)
+Contact::~Contact()
 {
-	this->_number = number;
-	this->_firstName = first;
-	this->_lastName = last;
-	this->_secret = secret;
-	this->_nickname = nick;
-	std::cout << "Contact correct constructor called." << std::endl;
-}
-
-Contact::Contact(const Contact& og)
-{
-	std::cout << "Contact copy constructor called." << std::endl;
-	*this = og;
-}
-
-Contact& Contact::operator=(const Contact& og)
-{
-	if (this != &og)
-	{
-		this->_number = og._number;
-		this->_firstName = og._firstName;
-		this->_lastName = og._lastName;
-		this->_secret = og._secret;
-		this->_nickname = og._nickname;
-		std::cout << "Contact copy assignment operator called." << std::endl;
-	}
-	else
-		std::cout << "Copy called to the same object. No actions are made." << std::endl;
-	return (*this);
+	std::cout << "Contact default destructor called." << std::endl;
 }
 
 std::string	Contact::getNumber()

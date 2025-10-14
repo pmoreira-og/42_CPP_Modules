@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:44:03 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/10/14 11:31:21 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:56:19 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(void)
 	std::cout << "Available Commands: ADD, SEARCH and EXIT." << std::endl;
 	index = -1;
 	counter = -1;
-	std::signal(SIGINT, SIG_IGN);
+	// std::signal(SIGINT, SIG_IGN);
 	while (std::cin)
 	{
 		input.clear();

@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 12:58:51 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/10/14 11:29:01 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:43:26 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,9 @@ PhoneBook::PhoneBook()
 	std::cout << "PhoneBook default constructor called." << std::endl;
 }
 
-PhoneBook::PhoneBook(const PhoneBook& og)
+PhoneBook::~PhoneBook()
 {
-	*this= og;
-	std::cout << "PhoneBook copy constructor called." << std::endl;
-}
-
-PhoneBook& PhoneBook::operator=(const PhoneBook& og)
-{
-	if (this != &og)
-	{
-		int	i;
-		
-		i = -1;
-		while (++i < 8)
-			this->_list[i] = og._list[i];
-		std::cout << "PhoneBook copy assignment operator called." << std::endl;
-	}
-	else
-		std::cout << "Copy called to the same object. No actions are made." << std::endl;
-	return (*this);
+	std::cout << "PhoneBook default destructor called." << std::endl;
 }
 
 std::string fill_value(std::string query)

@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:48:39 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/10/14 11:33:46 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:41:07 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ class Contact
 
 	public:
 		Contact();
-		Contact(std::string number, std::string first, std::string last, std::string nick, std::string secret);
-		Contact(const Contact& og);
-		Contact& operator=(const Contact& og);
+		~Contact();
 
 		std::string	getNumber();
 		std::string	getFirstName();

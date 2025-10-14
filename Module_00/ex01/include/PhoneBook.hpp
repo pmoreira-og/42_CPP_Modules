@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:45:49 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/10/13 16:04:56 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:42:36 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ class PhoneBook
 
 	public:
 		PhoneBook();
-		PhoneBook(const PhoneBook& og);
-		PhoneBook& operator=(const PhoneBook& og);
+		~PhoneBook();
 		void getTable(int index, int counter);
 		void getContact(int index);
 		void setContact(int index);
