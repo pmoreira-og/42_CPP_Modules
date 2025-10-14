@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 12:58:51 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/10/13 17:20:25 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:29:01 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,28 @@ std::string fill_value(std::string query)
 	return (input);
 }
 
+void print_error_msg(int index)
+{
+	if (index == 1)
+		std::cout << "Only Alphabetic chars with no spaces are allowed." << std::endl;
+	else if (index == 2)
+		std::cout << "Only Numeric chars and '+' are allowed. Ex: +351147852369 or 147258369." \
+<< std::endl;
+	else if (index == 3)
+		std::cout << "Only printable chars are allowed." << std::endl;
+}
+
 bool valid_input(std::string str)
 {
 	size_t	len;
 
 	len = 0;
 	if (str.empty())
-		return (false);
+		return (print_error_msg(1), false);
 	while (len < str.length())
 	{
 		if (!std::isalpha(str[len]))
-			return (false);
+			return (print_error_msg(1), false);
 		len++;
 	}
 	return (true);
@@ -70,13 +81,13 @@ bool valid_number(std::string str)
 
 	len = 0;
 	if (str.empty())
-		return (false);
-	if (str[len] == '+')
+		return (print_error_msg(2), false);
+	if (str[len] == '+' && str.length() > 1)
 		len++;
 	while (len < str.length())
 	{
 		if (!std::isdigit(str[len]))
-			return (false);
+			return (print_error_msg(2), false);
 		len++;
 	}
 	return (true);
@@ -88,13 +99,11 @@ bool valid_secret(std::string str)
 
 	len = 0;
 	if (str.empty())
-		return (false);
-	if (str[len] == '+')
-		len++;
+		return (print_error_msg(3), false);
 	while (len < str.length())
 	{
 		if (!std::isprint(str[len]))
-			return (false);
+			return (print_error_msg(3), false);
 		len++;
 	}
 	return (true);
@@ -123,8 +132,6 @@ void PhoneBook::setContact(int index)
 	input.clear();
 	while (std::cin && !valid_secret(input))
 		input = fill_value("Enter Darkest Secret: ");
-	if (input.empty())
-		input = "I'm an open book.";
 	this->_list[index].setSecret(input);
 }
 
