@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:16:55 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/10/14 15:59:23 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/14 16:18:51 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,17 @@
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_nbAccounts = 0;
-// int Account::_totalAmount = 0;
-// int Account::_totalAmount = 0;
-// int Account::_totalAmount = 0;
+int Account::_totalNbWithdrawals = 0;
 
 Account::Account(int initial_deposit)
 {
 	this->_amount = initial_deposit;
-	std::cout << "Account constructor called with a initial deposit of " \
-<< initial_deposit << "." << std::endl;
+	_displayTimestamp();
+	
+	std::cout << "index:" << _nbAccounts<< ";amount:"\
+<< this->_amount << ";created" << std::endl;
+	_nbAccounts += 1;
+
 }
 
 Account::~Account()
