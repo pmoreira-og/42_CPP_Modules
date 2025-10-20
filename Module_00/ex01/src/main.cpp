@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:44:03 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/10/14 11:56:19 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/20 12:06:42 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int main(void)
 	std::cout << "Available Commands: ADD, SEARCH and EXIT." << std::endl;
 	index = -1;
 	counter = -1;
-	// std::signal(SIGINT, SIG_IGN);
 	while (std::cin)
 	{
 		input.clear();
@@ -33,12 +32,12 @@ int main(void)
 		if (input.empty())
 			continue;
 		if (input == "SEARCH")
-			book.getTable(index, counter);
+			book.getTable(counter);
 		else if (input == "ADD")
 		{
+			if (index >= 7)
+				index = -1;
 			book.setContact(++index);
-			if (index > 7)
-				index = 0;
 			if (counter < 7)
 				counter++;
 		}

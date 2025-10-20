@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:45:49 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/10/14 11:42:36 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/20 11:27:54 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class PhoneBook
 	public:
 		PhoneBook();
 		~PhoneBook();
-		void getTable(int index, int counter);
+		void getTable(int counter);
 		void getContact(int index);
 		void setContact(int index);
 		void printInfo(int counter);

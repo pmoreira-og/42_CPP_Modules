@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 12:58:51 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/10/14 11:43:26 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/20 12:08:55 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,17 +161,17 @@ void PhoneBook::printInfo(int counter)
 	}
 }
 
-void PhoneBook::getTable(int index, int counter)
+void PhoneBook::getTable(int counter)
 {
 	int	i;
 
 	i = -1;
-	if (index == -1)
+	if (counter == -1)
 		std::cout << "No contacts saved on the phonebook." << std::endl;
 	else
 	{
 		std::cout << "-----Index------First-------Last---Nickname-" << std::endl;
-		while (++i <= index)
+		while (++i <= counter)
 		{
 			std::cout << std::setw(10) << i << "|";
 			std::cout << std::setw(10) << truncate_str(this->_list[i].getFirstName()) << "|";
