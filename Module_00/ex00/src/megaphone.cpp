@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 10:50:04 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/10/10 14:05:44 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/20 12:48:48 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_shout(std::string str)
 	len = 0;
 	while (len < str.length())
 	{
-		std::cout << (unsigned char) toupper(str[len]);
+		std::cout << (unsigned char) std::toupper(str[len]);
 		len++;
 	}
 }
