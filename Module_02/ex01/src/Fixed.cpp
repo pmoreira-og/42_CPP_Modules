@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 15:48:25 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/10/31 17:22:10 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/05 13:31:47 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,21 @@ Fixed::Fixed(Fixed const & og)
 
 Fixed::Fixed(const int num)
 {
-	
+	std::cout << "Int constructor called" << std::endl;
+	this->_value = num << this->_frac;
 }
 
 Fixed::Fixed(const float fnum)
 {
-	
+	std::cout << "Float constructor called" << std::endl;
+	this->_value = roundf(fnum * (1 << this->_frac));
 }
 
 Fixed & Fixed::operator=(Fixed const & og)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &og)
-		this->_value = og.getRawBits();
+		this->_value = og._value;
 	return (*this);
 }
 
@@ -61,10 +63,16 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat() const
 {
-	
+	return (this->_value / (float)(1 << this->_frac));
 }
 
 int Fixed::toInt() const
 {
-	
+	return (this->_value >> this->_frac);
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed& f)
+{
+	os << f.toFloat();
+	return (os);
 }

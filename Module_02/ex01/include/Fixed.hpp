@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 15:48:12 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/10/31 17:17:03 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/05 13:11:40 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,4 @@ class Fixed
 		int toInt( void ) const;
 };
 
-std::ostream& operator<<(std::ostream& os, const Fixed& f)
-{
-	float	temp;
-
-	//TODO: convert
-	os << temp;
-	return (os);
-}
+std::ostream& operator<<(std::ostream& os, const Fixed& f);
