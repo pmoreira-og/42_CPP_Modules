@@ -1,0 +1,160 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/31 15:48:25 by pmoreira          #+#    #+#             */
+/*   Updated: 2025/11/05 14:49:12 by pmoreira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../include/Fixed.hpp"
+
+const int Fixed::_frac = 8;
+
+Fixed::Fixed() : _value(0)
+{
+	std::cout << "Default constructor called" << std::endl;
+}
+
+Fixed::Fixed(Fixed const & og)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	*this = og;
+}
+
+Fixed::Fixed(const int num)
+{
+	std::cout << "Int constructor called" << std::endl;
+	this->_value = num << this->_frac;
+}
+
+Fixed::Fixed(const float fnum)
+{
+	std::cout << "Float constructor called" << std::endl;
+	this->_value = roundf(fnum * (1 << this->_frac));
+}
+
+Fixed::~Fixed()
+{
+	std::cout << "Destructor called" << std::endl;
+}
+
+Fixed & Fixed::operator=(Fixed const & og)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &og)
+		this->_value = og._value;
+	return (*this);
+}
+
+Fixed	Fixed::operator+(const Fixed &other)
+{
+	Fixed	result;
+
+	result.setRawBits(this->getRawBits() + other.getRawBits());
+	return (result);
+}
+
+Fixed	Fixed::operator-(const Fixed &other)
+{
+	Fixed	result;
+
+	result.setRawBits(this->getRawBits() - other.getRawBits());
+	return (result);
+}
+
+Fixed	Fixed::operator*(const Fixed &other)
+{
+	Fixed	result;
+
+	result.setRawBits(this->getRawBits() * other.getRawBits());
+	return (result);
+}
+
+Fixed	Fixed::operator/(const Fixed &other)
+{
+	
+}
+
+Fixed	&Fixed::operator++(void)
+{
+	
+}
+
+Fixed	Fixed::operator++(int)
+{
+	
+}
+
+Fixed	&Fixed::operator--(void)
+{
+	
+}
+
+Fixed	Fixed::operator--(int)
+{
+	
+}
+
+Fixed &	Fixed::operator>(Fixed const & other) const
+{
+	
+}
+
+Fixed &	Fixed::operator<(Fixed const & other) const
+{
+	
+}
+
+Fixed &	Fixed::operator>=(Fixed const & other) const
+{
+	
+}
+
+Fixed &	Fixed::operator<=(Fixed const & other) const
+{
+	
+}
+
+Fixed &	Fixed::operator==(Fixed const & other) const
+{
+	
+}
+
+Fixed &	Fixed::operator!=(Fixed const & other) const
+{
+	
+}
+
+
+int Fixed::getRawBits() const
+{
+	std::cout << "getRawBits member function called" << std::endl;
+	return (this->_value);
+}
+
+void Fixed::setRawBits(int const raw)
+{
+	this->_value = raw;
+}
+
+float Fixed::toFloat() const
+{
+	return (this->_value / (float)(1 << this->_frac));
+}
+
+int Fixed::toInt() const
+{
+	return (this->_value >> this->_frac);
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed& f)
+{
+	os << f.toFloat();
+	return (os);
+}
+
+
