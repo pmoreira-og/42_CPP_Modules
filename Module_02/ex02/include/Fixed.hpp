@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 15:48:12 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/05 14:41:56 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/12 11:56:01 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ class Fixed
 		Fixed	operator++(int);
 		Fixed	&operator--(void);
 		Fixed	operator--(int);
-		Fixed &	operator>(Fixed const & other) const;
-		Fixed &	operator<(Fixed const & other) const;
-		Fixed &	operator>=(Fixed const & other) const;
-		Fixed &	operator<=(Fixed const & other) const;
-		Fixed &	operator==(Fixed const & other) const;
-		Fixed &	operator!=(Fixed const & other) const;
+		bool	operator>(Fixed const & other) const;
+		bool	operator<(Fixed const & other) const;
+		bool	operator>=(Fixed const & other) const;
+		bool	operator<=(Fixed const & other) const;
+		bool	operator==(Fixed const & other) const;
+		bool	operator!=(Fixed const & other) const;
 
 		static Fixed	&min(Fixed &a, Fixed &b);
 		static const Fixed	&min(const Fixed &a, const Fixed &b);
