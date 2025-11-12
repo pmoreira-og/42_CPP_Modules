@@ -28,7 +28,7 @@ SRC = src
 DIR_GENERAL = .
 
 # === FILES ===
-SRC_GENERAL = main.cpp Fixed.cpp
+SRC_GENERAL = main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 SRCS_DIR =	$(addprefix $(SRC)/, $(addprefix $(DIR_GENERAL)/, $(SRC_GENERAL)))
 
