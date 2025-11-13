@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:42:59 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/13 10:27:00 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:08:29 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 Fixed	getArea(Point const a, Point const b, Point const c)
 {
-	return
-	(
-		Fixed(0.5f) *
-		(a.getX() * (b.getY() - c.getY()) + 
-		b.getX() * (c.getY() - a.getY()) +
-		c.getX() * (a.getY() - b.getY()))
-	);
+	Fixed area;
+
+	area = ((a.getX() * b.getY()) - (a.getX() * c.getY()) + \
+			(b.getX() * c.getY()) - (b.getX() * a.getY()) + \
+			(c.getX() * a.getY()) - (c.getX() * b.getY())) / 2;
+	return (area.abs());
 }
 
 bool	bsp( Point const a, Point const b, Point const c, Point const point)

@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 15:48:12 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/12 11:56:01 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:00:31 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ class Fixed
 		static const Fixed	&min(const Fixed &a, const Fixed &b);
 		static Fixed	&max(Fixed &a, Fixed &b);
 		static const Fixed	&max(const Fixed &a, const Fixed &b);
-
+		Fixed	abs(void);
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 		float toFloat( void ) const;

@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 15:48:25 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/13 10:40:38 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:02:40 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,4 +209,11 @@ std::ostream& operator<<(std::ostream& os, const Fixed& f)
 {
 	os << f.toFloat();
 	return (os);
+}
+
+Fixed	Fixed::abs(void)
+{
+	if (*this < 0)
+		return (Fixed(this->toFloat() * -1));
+	return (*this);
 }
