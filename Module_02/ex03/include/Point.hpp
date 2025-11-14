@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:06:16 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/13 10:16:13 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/14 10:01:37 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include "Fixed.hpp"
+
 class Point
 {
 	private:

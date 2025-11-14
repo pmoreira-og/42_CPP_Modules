@@ -6,14 +6,14 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 15:48:12 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/12 11:56:01 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/14 10:00:08 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include <iostream>
 #include <cmath>
-
-#pragma once
 
 class Fixed
 {

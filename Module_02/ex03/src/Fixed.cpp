@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 15:48:25 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/13 16:02:40 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/14 10:29:30 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,35 +16,35 @@ const int Fixed::_frac = 8;
 
 Fixed::Fixed() : _value(0)
 {
-	std::cout << "Fixed default constructor called" << std::endl;
+	// std::cout << "Fixed default constructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const & og)
 {
-	std::cout << "Fixed copy constructor called" << std::endl;
+	// std::cout << "Fixed copy constructor called" << std::endl;
 	*this = og;
 }
 
 Fixed::Fixed(const int num)
 {
-	std::cout << "Fixed int constructor called" << std::endl;
+	// std::cout << "Fixed int constructor called" << std::endl;
 	this->_value = num << this->_frac;
 }
 
 Fixed::Fixed(const float fnum)
 {
-	std::cout << "Fixed float constructor called" << std::endl;
+	// std::cout << "Fixed float constructor called" << std::endl;
 	this->_value = roundf(fnum * (1 << this->_frac));
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Fixed destructor called" << std::endl;
+	// std::cout << "Fixed destructor called" << std::endl;
 }
 
 Fixed & Fixed::operator=(Fixed const & og)
 {
-	std::cout << "Fixed copy assignment operator called" << std::endl;
+	// std::cout << "Fixed copy assignment operator called" << std::endl;
 	if (this != &og)
 		this->_value = og._value;
 	return (*this);
@@ -186,7 +186,7 @@ const Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
 
 int Fixed::getRawBits() const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return (this->_value);
 }
 
