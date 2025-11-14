@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 12:50:22 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/14 14:24:17 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:42:31 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,19 @@ ScavTrap::ScavTrap(ScavTrap const & og)
 {
 	*this = og;
 	std::cout << "ScavTrap copy constructor called" << std::endl;
+}
+
+ScavTrap & ScavTrap::operator=(ScavTrap const & other)
+{
+	std::cout << "ScavTrap copy assignment operator called" << std::endl;
+	if (this != &other)
+	{
+		this->_name = other._name;
+		this->_hitPoints = other._hitPoints;
+		this->_attack = other._attack;
+		this->_energyPoints = other._energyPoints;
+	}
+	return (*this);
 }
 
 ScavTrap::~ScavTrap()

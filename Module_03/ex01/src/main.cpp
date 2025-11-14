@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 10:50:08 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/14 14:34:00 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:42:14 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ int main(void)
 	std::cout << "----------------------------------------------" << std::endl;
 	for (size_t i = 0; i < 20; i++)
 		human2.takeDamage(10);
+	std::cout << "----------------------------------------------" << std::endl;
+	other = human2;
+	std::cout << "----------------------------------------------" << std::endl;
+	for (size_t i = 0; i < 20; i++)
+		other.attack("Robson");
 	std::cout << "----------------------------------------------" << std::endl;
 	return 0;
 }
