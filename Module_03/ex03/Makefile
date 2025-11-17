@@ -7,7 +7,7 @@ CYAN=\033[1;36m
 RESET=\033[0m
 
 # === NAME ===
-NAME = Serena_my_love
+NAME = Diamond_Trap
 
 # === VALGRIND FLAGS ===
 VAL = valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes \
@@ -28,7 +28,7 @@ SRC = src
 DIR_GENERAL = .
 
 # === FILES ===
-SRC_GENERAL = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC_GENERAL = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 SRCS_DIR =	$(addprefix $(SRC)/, $(addprefix $(DIR_GENERAL)/, $(SRC_GENERAL)))
 

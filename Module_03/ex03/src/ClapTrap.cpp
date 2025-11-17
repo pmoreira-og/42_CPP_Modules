@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 10:50:13 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/14 12:36:48 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/17 14:29:08 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,4 +107,9 @@ void ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "ClapTrap " << this->_name << ":";
 	std::cout << " got repaired by " << amount << " of HP";
 	std::cout << std::endl;
+}
+
+std::string ClapTrap::getName()
+{
+	return (this->_name);
 }

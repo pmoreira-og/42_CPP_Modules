@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 12:50:33 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/14 16:27:12 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/17 12:48:00 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,8 @@ class ScavTrap : public virtual ClapTrap
 		~ScavTrap();
 		void attack(const std::string& target);
 		void guardGate();
+
+		static const unsigned int attack_power = 20;
+		static const unsigned int total_energy = 50;
+		static const unsigned int total_hp = 100;
 };
