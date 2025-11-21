@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 11:03:05 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/21 10:49:59 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/21 13:34:40 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ class AAnimal
 		AAnimal & operator=(AAnimal const & ohter);
 		virtual ~AAnimal();
 
-		virtual void	makeSound() const = 0; // pure virtual
+		virtual void	makeSound() const = 0;
 		std::string		getType() const;
 };

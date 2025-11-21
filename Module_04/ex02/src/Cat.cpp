@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 11:03:10 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/21 10:50:36 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/21 13:35:07 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ Cat::Cat(std::string name) : AAnimal(name)
 			this->_mind->setIdea(i, "some idea");
 	}
 }
-
-//! Deep copy vs. Shallow copy
 
 Cat::Cat(Cat const & og)
 {
