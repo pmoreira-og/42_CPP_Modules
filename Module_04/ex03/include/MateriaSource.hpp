@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 14:30:18 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/21 14:41:38 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/21 14:47:02 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ class MateriaSource : public IMateriaSource
 {
 	private:
 		AMateria	*_storage[4];
+
 	public:
 		MateriaSource();
 		MateriaSource(MateriaSource const & og);

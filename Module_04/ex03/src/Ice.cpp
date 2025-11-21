@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:17:30 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/21 11:25:09 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/21 15:39:56 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,15 @@ Ice::~Ice()
 	std::cout << "Ice destructor called" << std::endl;
 }
 
-AMateria	*Ice::clone()
+AMateria	*Ice::clone() const
 {
-	AMateria	*temp = this;
-
-	return (temp);
+	return (new Ice(*this));
 }
 
 void	Ice::use(ICharacter& target)
 {
-	
+	std::cout << "Ice: ";
+	std::cout << "* shoots an ice bolt at ";
+	std::cout << target.getName();
+	std::cout << " *" << std::endl;
 }

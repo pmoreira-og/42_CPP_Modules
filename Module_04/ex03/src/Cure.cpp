@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:26:49 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/21 11:27:26 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/21 15:26:35 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,15 @@ Cure::~Cure()
 	std::cout << "Cure destructor called" << std::endl;
 }
 
-AMateria	*Cure::clone()
+AMateria	*Cure::clone() const
 {
-	AMateria	*temp = this;
-
-	return (temp);
+	return (new Cure(*this));
 }
 
 void	Cure::use(ICharacter& target)
 {
-	
+	std::cout << "Cure: ";
+	std::cout << "* shoots an ice bolt at ";
+	std::cout << target.getName();
+	std::cout << " *" << std::endl;
 }
