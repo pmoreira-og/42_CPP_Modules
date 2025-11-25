@@ -7,7 +7,7 @@ CYAN=\033[1;36m
 RESET=\033[0m
 
 # === NAME ===
-NAME = Interface_&_recap
+NAME = Interface_and_recap
 
 # === VALGRIND FLAGS ===
 VAL = valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes \
@@ -28,7 +28,7 @@ SRC = src
 DIR_GENERAL = .
 
 # === FILES ===
-SRC_GENERAL = main.cpp
+SRC_GENERAL = main.cpp Ice.cpp Cure.cpp Character.cpp AMateria.cpp MateriaSource.cpp
 
 SRCS_DIR =	$(addprefix $(SRC)/, $(addprefix $(DIR_GENERAL)/, $(SRC_GENERAL)))
 

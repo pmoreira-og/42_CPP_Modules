@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 14:30:18 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/21 14:47:02 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/25 10:55:12 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class MateriaSource : public IMateriaSource
 
 	public:
 		MateriaSource();
+		MateriaSource(std::string & name);
 		MateriaSource(MateriaSource const & og);
 		MateriaSource & operator=(MateriaSource const & other);
 		~MateriaSource();

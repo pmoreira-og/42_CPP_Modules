@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:26:49 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/21 15:26:35 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/25 12:19:53 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Cure & Cure::operator=(Cure const & other)
 
 Cure::~Cure()
 {
-	std::cout << "Cure destructor called" << std::endl;
+	std::cout << "Cure destructor called"<< std::endl;
 }
 
 AMateria	*Cure::clone() const
@@ -50,8 +50,8 @@ AMateria	*Cure::clone() const
 
 void	Cure::use(ICharacter& target)
 {
-	std::cout << "Cure: ";
+	std::cout << UYEL"Cure: ";
 	std::cout << "* shoots an ice bolt at ";
 	std::cout << target.getName();
-	std::cout << " *" << std::endl;
+	std::cout << " *"DEF << std::endl;
 }

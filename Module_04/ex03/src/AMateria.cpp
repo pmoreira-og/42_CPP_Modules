@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:05:09 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/21 11:16:54 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/25 12:10:09 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,10 @@ AMateria::~AMateria()
 std::string const & AMateria::getType() const
 {
 	return (this->_type);
+}
+
+void	AMateria::use(ICharacter& target)
+{
+	(void)target;
+	std::cout << getType() << " Spell Available!" << std::endl;
 }

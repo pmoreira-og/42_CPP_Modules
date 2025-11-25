@@ -6,13 +6,14 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:31:44 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/21 11:32:49 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/25 11:37:15 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "AMateria.hpp"
+class AMateria;
 
 class ICharacter
 {

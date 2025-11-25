@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 14:30:16 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/21 15:03:16 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/25 10:55:16 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 
 MateriaSource::MateriaSource()
 {
+	std::cout << "MateriaSource default constructor called" << std::endl;
+	for (size_t i = 0; i < 4; i++)
+		this->_storage[i] = NULL;
+}
+
+MateriaSource::MateriaSource(std::string & name)
+{
+	(void) name;
 	std::cout << "MateriaSource default constructor called" << std::endl;
 	for (size_t i = 0; i < 4; i++)
 		this->_storage[i] = NULL;
@@ -66,10 +74,31 @@ MateriaSource::~MateriaSource()
 
 void MateriaSource::learnMateria(AMateria* mat)
 {
-	
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (this->_storage[i] && this->_storage[i]->getType() == mat->getType())
+		{
+			std::cout << "Materia already learned" << std::endl;
+			return ;
+		}
+	}
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (this->_storage[i] == NULL)
+		{
+			this->_storage[i] = mat;
+			std::cout << "Materia successfully learned" << std::endl;
+			return ;
+		}
+	}
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-	
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (this->_storage[i]->getType() == type)
+			return (this->_storage[i]->clone());
+	}
+	return (NULL);
 }

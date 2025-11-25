@@ -6,14 +6,13 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:25:58 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/21 15:18:12 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/25 11:46:07 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "AMateria.hpp"
-#include "Character.hpp"
 
 class Cure : public AMateria
 {
@@ -24,7 +23,7 @@ class Cure : public AMateria
 		Cure & operator=(Cure const & other);
 		~Cure();
 
-		std::string const & getType() const; //Returns the materia type
+		std::string const & getType() const;
 		AMateria* clone() const;
 		void use(ICharacter& target);
 };
