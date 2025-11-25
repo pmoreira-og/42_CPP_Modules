@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:36:49 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/25 13:07:17 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/25 15:39:18 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void Character::unequip(int idx)
 	_cleanFloor();
 }
 
-void Character::use(int idx, ICharacter& target)
+void Character::use(int idx, ICharacter & target)
 {
 	if (!(idx >= 0 && idx <= 3))
 	{

@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:05:06 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/25 12:33:16 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/25 15:46:24 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,19 @@ int main()
 	me->equip(tmp);
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	me->unequip(4);
-	me->unequip(3);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	std::cout << "----------------------------------------------" << std::endl;
 	ICharacter* bob = new Character("bob");
+	tmp = src->createMateria("ice");
+	bob->equip(tmp);
 	std::cout << "----------------------------------------------" << std::endl;
 	me->use(0, *bob);
 	me->use(0, *bob);
 	me->use(1, *bob);
 	me->use(4, *bob);
+	bob->use(0, *me);
+	bob->use(0, *me);
 	std::cout << "----------------------------------------------" << std::endl;
 	delete bob;
 	delete me;
