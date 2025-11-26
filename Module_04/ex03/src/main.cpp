@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:05:06 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/25 15:46:24 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/25 15:56:51 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,12 @@ int main()
 	me->use(4, *bob);
 	bob->use(0, *me);
 	bob->use(0, *me);
+	bob->unequip(0);
+	bob->unequip(0);
+	bob->unequip(2);
+	me->unequip(1);
+	me->unequip(2);
+	me->unequip(2);
 	std::cout << "----------------------------------------------" << std::endl;
 	delete bob;
 	delete me;

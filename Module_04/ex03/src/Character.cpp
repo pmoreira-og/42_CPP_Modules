@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:36:49 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/25 15:39:18 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/26 09:55:22 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,16 @@ void Character::unequip(int idx)
 		std::cout << URED"Invalid index, only 4 slots available (0~3)!"DEF << std::endl;
 		return ;
 	}
-	std::cout << UCYN"Materia: ";
-	std::cout << this->_inv[idx]->getType() <<" successfully unequipped!"DEF << std::endl;
-	_floor = this->_inv[idx];
-	this->_inv[idx] = NULL;
-	_cleanFloor();
+	if (this->_inv[idx])
+	{
+		std::cout << UCYN"Materia: ";
+		std::cout << this->_inv[idx]->getType() <<" successfully unequipped!"DEF << std::endl;
+		_floor = this->_inv[idx];
+		this->_inv[idx] = NULL;
+		_cleanFloor();
+	}
+	else
+		std::cout << URED"" << this->getName() << " couldn't unequip, empty slot!"DEF << std::endl;
 }
 
 void Character::use(int idx, ICharacter & target)
