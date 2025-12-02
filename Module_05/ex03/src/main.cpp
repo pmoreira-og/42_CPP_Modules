@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:24:41 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/12/02 16:37:50 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/12/02 16:41:32 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(void) {
 		if (!shrub)
 			return (1);
 		std::cout << bob << std::endl;
-		std::cout << shrub << std::endl;
+		std::cout << *shrub << std::endl;
 	
 		bob.signForm(*shrub);
 		bob.executeForm(*shrub);
@@ -42,7 +42,7 @@ int main(void) {
 		if (!robot)
 			return (1);
 		std::cout << alice << std::endl;
-		std::cout << robot << std::endl;
+		std::cout << *robot << std::endl;
 	
 		alice.signForm(*robot);
 		alice.executeForm(*robot);
