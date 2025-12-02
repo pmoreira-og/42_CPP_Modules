@@ -6,11 +6,12 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:24:31 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/28 14:40:26 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/12/02 15:28:41 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Bureaucrat.hpp"
+#include "../include/AForm.hpp"
 
 Bureaucrat::Bureaucrat() : _name("Unknown"), _grade(150)
 {
@@ -121,4 +122,13 @@ void	Bureaucrat::signForm(AForm & paper) const
 	std::cout << this->getName();
 	std::cout << " signed ";
 	std::cout << paper.getName() << std::endl;
+}
+
+void	Bureaucrat::executeForm(AForm const & form) const
+{
+	if (this->getGrade() > form.getExecGrade())
+		throw GradeTooLowException();
+	form.execute(*this);
+	std::cout << this->getName();
+	std::cout << " executed " << form.getName() << std::endl;
 }

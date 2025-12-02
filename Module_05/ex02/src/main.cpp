@@ -6,97 +6,128 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:24:41 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/28 11:56:39 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/12/02 15:40:24 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Bureaucrat.hpp"
+#include "../include/ShrubberyCreationForm.hpp"
+#include "../include/RobotomyRequestForm.hpp"
+#include "../include/PresidentialPardonForm.hpp"
 
-int main()
-{
-	try
-	{
-		Bureaucrat john = Bureaucrat("john", 1);
-		Bureaucrat random = Bureaucrat();
-		Form	roadForm = Form();
-		Form	midForm = Form("mid", 75, 150);
-		Form	highForm = Form("high", 1, 1);
-		john.decrementGrade();
-		std::cout << john << std::endl;
-		std::cout << random << std::endl;
-		random.signForm(roadForm);
-		john.signForm(roadForm);
-		random.signForm(midForm);
-		john.signForm(midForm);
-		random.signForm(highForm);
-		john.signForm(highForm);
+int main(void) {
+	std::cout << "---------------------- Testing ShrubberyCreationForm ----------------------" << std::endl;
+	try {
+		Bureaucrat bob("Bob", 137);
+		ShrubberyCreationForm shrub("home");
+	
+		std::cout << bob << std::endl;
+		std::cout << shrub << std::endl;
+	
+		bob.signForm(shrub);
+		bob.executeForm(shrub);
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
+	catch (const std::exception &e) {
+		std::cout << "Exception: " << e.what() << std::endl;
+	}
+
+	std::cout << "---------------------- Testing RobotomyRequestForm ----------------------" << std::endl;
+	try {
+		Bureaucrat alice("Alice", 45);
+		RobotomyRequestForm robot("Bender");
+	
+		std::cout << alice << std::endl;
+		std::cout << robot << std::endl;
+	
+		alice.signForm(robot);
+		alice.executeForm(robot);
+		alice.executeForm(robot);
+	}
+	catch (const std::exception &e) {
+		std::cout << "Exception: " << e.what() << std::endl;
+	}
+
+	std::cout << "---------------------- Testing PresidentialPardonForm ----------------------" << std::endl;
+	try {
+		Bureaucrat president("President", 1);
+		PresidentialPardonForm pardon("Arthur Dent");
+	
+		std::cout << president << std::endl;
+		std::cout << pardon << std::endl;
+	
+		president.signForm(pardon);
+		president.executeForm(pardon);
+	}
+	catch (const std::exception &e) {
+		std::cout << "Exception: " << e.what() << std::endl;
+	}
+
+	std::cout << "---------------------- Testing Failures ----------------------" << std::endl;
+	try {
+		Bureaucrat intern("Intern", 150);
+		ShrubberyCreationForm shrub2("garden");
+	
+		std::cout << intern << std::endl;
+		intern.signForm(shrub2);
+		intern.executeForm(shrub2);
+	}
+	catch (const std::exception &e) {
+		std::cout << "Exception: " << e.what() << std::endl;
+	}
+	try {
+		Bureaucrat bob("Bob", 138);
+		ShrubberyCreationForm shrub("home");
+	
+		std::cout << bob << std::endl;
+		std::cout << shrub << std::endl;
+	
+		bob.signForm(shrub);
+		bob.executeForm(shrub);
+	}
+	catch (const std::exception &e) {
+		std::cout << "Exception: " << e.what() << std::endl;
 	}
 	std::cout << "-----------------------2----------------------" << std::endl;
-	try
-	{
-		Bureaucrat john = Bureaucrat("john", 1);
-		Bureaucrat random = Bureaucrat();
-		Form	roadForm = Form();
-		Form	midForm = Form("mid", 75, 151);
-		Form	highForm = Form("high", 1, 1);
-		std::cout << john << std::endl;
-		std::cout << random << std::endl;
-		random.signForm(roadForm);
-		john.signForm(roadForm);
-		random.signForm(midForm);
-		john.signForm(midForm);
-		random.signForm(highForm);
-		john.signForm(highForm);
+	try {
+		Bureaucrat alice("Alice", 46);
+		RobotomyRequestForm robot("Bender");
+	
+		std::cout << alice << std::endl;
+		std::cout << robot << std::endl;
+	
+		alice.signForm(robot);
+		alice.executeForm(robot);
+		alice.executeForm(robot);
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
+	catch (const std::exception &e) {
+		std::cout << "Exception: " << e.what() << std::endl;
 	}
 	std::cout << "-----------------------3----------------------" << std::endl;
-	try
-	{
-		Bureaucrat john = Bureaucrat("john", 1);
-		Bureaucrat random = Bureaucrat();
-		Form	roadForm = Form();
-		Form	midForm = Form("mid", 75, 150);
-		Form	highForm = Form("high", 0, 1);
-		std::cout << john << std::endl;
-		std::cout << random << std::endl;
-		random.signForm(roadForm);
-		john.signForm(roadForm);
-		random.signForm(midForm);
-		john.signForm(midForm);
-		random.signForm(highForm);
-		john.signForm(highForm);
+	try {
+		Bureaucrat president("President", 100);
+		PresidentialPardonForm pardon("Arthur Dent");
+	
+		std::cout << president << std::endl;
+		std::cout << pardon << std::endl;
+	
+		president.signForm(pardon);
+		president.executeForm(pardon);
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
+	catch (const std::exception &e) {
+		std::cout << "Exception: " << e.what() << std::endl;
 	}
 	std::cout << "-----------------------4----------------------" << std::endl;
-	try
-	{
-		Bureaucrat john = Bureaucrat("john", 1);
-		Bureaucrat random = Bureaucrat();
-		Form	roadForm = Form();
-		Form	midForm = Form("mid", 75, 150);
-		Form	highForm = Form("high", 1, 1);
-		std::cout << john << std::endl;
-		std::cout << random << std::endl;
-		random.signForm(roadForm);
-		john.signForm(roadForm);
-		random.signForm(midForm);
-		john.signForm(midForm);
-		random.signForm(highForm);
-		john.signForm(highForm);
+	try {
+		Bureaucrat president("President", 1);
+		PresidentialPardonForm pardon("Arthur Dent");
+	
+		std::cout << president << std::endl;
+		std::cout << pardon << std::endl;
+	
+		president.executeForm(pardon);
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
+	catch (const std::exception &e) {
+		std::cout << "Exception: " << e.what() << std::endl;
 	}
 	return 0;
 }

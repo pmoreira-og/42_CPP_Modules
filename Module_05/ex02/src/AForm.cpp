@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:47:41 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/28 14:26:45 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/12/02 12:02:08 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,9 @@ const char *AForm::GradeTooHighException::what() const throw()
 const char *AForm::GradeTooLowException::what() const throw()
 {
 	return ("Form grade can't be any lower, min value permitted is 150.");
+}
+
+const char *AForm::FormNotSignedException::what() const throw()
+{
+	return ("Form isn't signed.");
 }

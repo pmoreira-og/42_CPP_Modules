@@ -28,7 +28,7 @@ SRC = src
 DIR_GENERAL = .
 
 # === FILES ===
-SRC_GENERAL = main.cpp Bureaucrat.cpp Form.cpp
+SRC_GENERAL = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 SRCS_DIR =	$(addprefix $(SRC)/, $(addprefix $(DIR_GENERAL)/, $(SRC_GENERAL)))
 
