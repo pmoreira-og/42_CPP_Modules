@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:24:41 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/27 14:53:57 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/12/03 10:53:29 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ int main()
 		Bureaucrat john = Bureaucrat("john", 1);
 		Bureaucrat random = Bureaucrat();
 		john.decrementGrade();
-		random.decrementGrade();
 		std::cout << john << std::endl;
 		std::cout << random << std::endl;
 	}
