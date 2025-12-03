@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:24:41 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/12/02 15:40:24 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/12/03 11:14:47 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,12 @@ int main(void) {
 
 	std::cout << "---------------------- Testing Failures ----------------------" << std::endl;
 	try {
-		Bureaucrat intern("Intern", 150);
+		Bureaucrat recruit("Recruit", 150);
 		ShrubberyCreationForm shrub2("garden");
 	
-		std::cout << intern << std::endl;
-		intern.signForm(shrub2);
-		intern.executeForm(shrub2);
+		std::cout << recruit << std::endl;
+		recruit.signForm(shrub2);
+		recruit.executeForm(shrub2);
 	}
 	catch (const std::exception &e) {
 		std::cout << "Exception: " << e.what() << std::endl;
