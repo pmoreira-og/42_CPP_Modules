@@ -7,7 +7,7 @@ CYAN=\033[1;36m
 RESET=\033[0m
 
 # === NAME ===
-NAME = maggots
+NAME = more_forms
 
 # === VALGRIND FLAGS ===
 VAL = valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes \
