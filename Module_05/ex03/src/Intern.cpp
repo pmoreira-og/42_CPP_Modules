@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 16:02:02 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/12/02 16:28:02 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/12/03 09:58:06 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,12 @@ AForm * Intern::makeForm(std::string const & name, std::string const & target)
 			return (new PresidentialPardonForm(target));
 		// fall
 		default:
-			return (NULL);
+			throw InvalidFormRequestException();
 	}
+}
+
+const char *Intern::InvalidFormRequestException::what() const throw()
+{
+	return ("Invalid Form Request received. \nAvaliable options: robotomy request, \
+shrubbery request, presidential request");
 }

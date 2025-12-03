@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:24:41 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/12/02 16:41:32 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/12/03 09:59:05 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,7 @@ int main(void) {
 		Bureaucrat bob("Bob", 137);
 		Intern someRandomIntern;
 		AForm* shrub;
-		shrub = someRandomIntern.makeForm("shrubbery request", "Bender");
-		if (!shrub)
-			return (1);
-		std::cout << bob << std::endl;
-		std::cout << *shrub << std::endl;
-	
+		shrub = someRandomIntern.makeForm("shrubbery request", "home");
 		bob.signForm(*shrub);
 		bob.executeForm(*shrub);
 		delete shrub;
@@ -39,11 +34,6 @@ int main(void) {
 		Intern someRandomIntern;
 		AForm* robot;
 		robot = someRandomIntern.makeForm("robotomy request", "Bender");
-		if (!robot)
-			return (1);
-		std::cout << alice << std::endl;
-		std::cout << *robot << std::endl;
-	
 		alice.signForm(*robot);
 		alice.executeForm(*robot);
 		alice.executeForm(*robot);
@@ -58,13 +48,15 @@ int main(void) {
 	std::cout << "---------------------- Testing PresidentialPardonForm ----------------------" << std::endl;
 	try {
 		Bureaucrat president("President", 1);
-		PresidentialPardonForm pardon("Arthur Dent");
-	
+		Intern someRandomIntern;
+		AForm* pardon;
+		pardon = someRandomIntern.makeForm("presidential request", "Arthur Dent");
 		std::cout << president << std::endl;
-		std::cout << pardon << std::endl;
+		std::cout << *pardon << std::endl;
 	
-		president.signForm(pardon);
-		president.executeForm(pardon);
+		president.signForm(*pardon);
+		president.executeForm(*pardon);
+		delete (pardon);
 	}
 	catch (const std::exception &e) {
 		std::cout << "Exception: " << e.what() << std::endl;
@@ -72,12 +64,12 @@ int main(void) {
 
 	std::cout << "---------------------- Testing Failures ----------------------" << std::endl;
 	try {
-		Bureaucrat intern("Intern", 150);
+		Bureaucrat recruit("Recruit", 150);
 		ShrubberyCreationForm shrub2("garden");
 	
-		std::cout << intern << std::endl;
-		intern.signForm(shrub2);
-		intern.executeForm(shrub2);
+		std::cout << recruit << std::endl;
+		recruit.signForm(shrub2);
+		recruit.executeForm(shrub2);
 	}
 	catch (const std::exception &e) {
 		std::cout << "Exception: " << e.what() << std::endl;
@@ -137,17 +129,21 @@ int main(void) {
 	catch (const std::exception &e) {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
-	try
-	{
+	std::cout << "-----------------------5----------------------" << std::endl;
+	try {
+		Bureaucrat president("President", 1);
 		Intern someRandomIntern;
-		AForm* rrf;
-		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-		delete rrf;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+		AForm* pardon;
+		pardon = someRandomIntern.makeForm("random request", "Arthur Dent");
+		std::cout << president << std::endl;
+		std::cout << *pardon << std::endl;
 	
+		president.signForm(*pardon);
+		president.executeForm(*pardon);
+		delete (pardon);
+	}
+	catch (const std::exception &e) {
+		std::cout << "Exception: " << e.what() << std::endl;
+	}
 	return 0;
 }
