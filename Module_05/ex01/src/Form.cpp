@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:47:41 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/28 11:08:58 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/12/03 10:50:28 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	Form::beSigned(Bureaucrat const & signatory)
 	if (signatory.getGrade() <= this->_signGrade)
 		this->_signed = true;
 	else
-		throw GradeTooLowException();
+		throw Bureaucrat::GradeIsNotEnoughException();
 }
 
 std::ostream & operator<<(std::ostream & os, const Form & obj)

@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:24:31 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/28 11:38:49 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/12/03 10:51:13 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,11 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 	return ("Bureaucrat grade can't be any lower, min value permitted is 150.");
 }
 
+const char *Bureaucrat::GradeIsNotEnoughException::what() const throw()
+{
+	return ("Bureaucrat grade isn't enough to do the action.");
+}
+
 void	Bureaucrat::signForm(Form & paper) const
 {
 	if (paper.getSignStatus())
@@ -114,7 +119,7 @@ void	Bureaucrat::signForm(Form & paper) const
 		std::cout << this->getName();
 		std::cout << " couldn’t sign ";
 		std::cout << paper.getName();
-		std::cout << " because ";
+		std::cout << " because: ";
 		std::cout << e.what() << std::endl;
 		return ;
 	}

@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:24:53 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/11/28 10:44:55 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/12/03 10:49:31 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ class Bureaucrat
 		};
 
 		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+		class GradeIsNotEnoughException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
