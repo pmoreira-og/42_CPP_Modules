@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:24:31 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/12/02 15:28:41 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/12/03 11:25:48 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,11 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 	return ("Bureaucrat grade can't be any lower, min value permitted is 150.");
 }
 
+const char *Bureaucrat::GradeIsNotEnoughException::what() const throw()
+{
+	return ("Bureaucrat grade isn't enough to do the action.");
+}
+
 void	Bureaucrat::signForm(AForm & paper) const
 {
 	if (paper.getSignStatus())
@@ -106,19 +111,7 @@ void	Bureaucrat::signForm(AForm & paper) const
 		std::cout << " because is already signed" << std::endl;
 		return ;
 	}
-	try
-	{
-		paper.beSigned(*this);
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << this->getName();
-		std::cout << " couldn’t sign ";
-		std::cout << paper.getName();
-		std::cout << " because ";
-		std::cout << e.what() << std::endl;
-		return ;
-	}
+	paper.beSigned(*this);
 	std::cout << this->getName();
 	std::cout << " signed ";
 	std::cout << paper.getName() << std::endl;
@@ -127,7 +120,7 @@ void	Bureaucrat::signForm(AForm & paper) const
 void	Bureaucrat::executeForm(AForm const & form) const
 {
 	if (this->getGrade() > form.getExecGrade())
-		throw GradeTooLowException();
+		throw GradeIsNotEnoughException();
 	form.execute(*this);
 	std::cout << this->getName();
 	std::cout << " executed " << form.getName() << std::endl;
