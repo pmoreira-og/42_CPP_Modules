@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 13:36:27 by pmoreira          #+#    #+#             */
-/*   Updated: 2026/01/19 16:19:30 by pmoreira         ###   ########.fr       */
+/*   Updated: 2026/01/26 14:15:08 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,13 @@ static t_type	getType(std::string const & input)
 		double value = std::strtod(input.c_str(), &endptr);
 		if (endptr && *endptr)
 			return (ERROR);
-		if (value > std::numeric_limits<int>::min() || value < std::numeric_limits<int>::max())
+		if (value < std::numeric_limits<int>::min() || value > std::numeric_limits<int>::max())
 			return (ERROR);
+		return (INT);
 	}
 	else if (input.at(length - 1) == 'f')
 	{
-		if ((input.find_first_of("f") != input.find_last_of("f")) || length < 4)
+		if ((input.find_first_of("f") != input.find_last_of("f")) || length < 3)
 			return (ERROR);
 		if (input.find_first_not_of("+-1234567890.f") != std::string::npos)
 			return (ERROR);
@@ -80,17 +81,22 @@ static t_type	getType(std::string const & input)
 		if ((endptr && *endptr != 'f') || !isdigit(*(endptr - 1))
 		|| value == HUGE_VAL || value == -HUGE_VAL
 		|| value > std::numeric_limits<float>::max() 
-			|| value < std::numeric_limits<float>::lowest())
+			|| value < -std::numeric_limits<float>::max())
 			return (ERROR);
 		return (FLOAT);
 	}
 	else
 	{
-		if (input.at(length - 1))
+		if (length < 3)
+			return (ERROR);
 		if (input.find_first_not_of("+-1234567890.") != std::string::npos)
 			return (ERROR);
+		double value = std::strtod(input.c_str(), &endptr);
+		if ((endptr && *endptr) || !isdigit(*(endptr - 1))
+		|| value == HUGE_VAL || value == -HUGE_VAL)
+			return (ERROR);
+		return (DOUBLE);
 	}
-	return (FLOAT);
 }
 
 static void	pseudoPrint(std::string const & input)
@@ -130,7 +136,7 @@ static void floatPrinter(std::string const & input)
 {
 	float	number;
 
-	number = atof(input.c_str());
+	number = std::strtof(input.c_str(), NULL);
 	if (!(number > 255 || number < 0) && isprint(number))
 		std::cout << "char: '" << static_cast<char> (number) << "'" << std::endl;
 	else
@@ -144,7 +150,7 @@ static void doublePrinter(std::string const & input)
 {
 	double	number;
 
-	number = atol(input.c_str());
+	number = std::strtod(input.c_str(), NULL);
 	if (!(number > 255 || number < 0) && isprint(number))
 		std::cout << "char: '" << static_cast<char> (number) << "'" << std::endl;
 	else
@@ -162,6 +168,7 @@ void ScalarConverter::converter(std::string const & input)
 		return ;
 	}
 	t_type type = getType(input);
+	std::cout << std::fixed << std::setprecision(1) << std::endl;
 	switch (type)
 	{
 		case PSEUDO:
