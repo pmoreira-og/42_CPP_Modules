@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 15:34:06 by pmoreira          #+#    #+#             */
-/*   Updated: 2026/01/27 16:19:59 by pmoreira         ###   ########.fr       */
+/*   Updated: 2026/01/27 16:30:56 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ int main()
 	std::cout << std::endl;
 	
 	std::cout << "----------------------------------------------------"<< std::endl;
-	const int const_int_array[5] = {6,7,8,9,10};
-	::iter(const_int_array, 5, &::print);
+	const double const_double_array[5] = {6,7,8,9,10};
+	::iter(const_double_array, 5, &::print);
 	std::cout << std::endl;
 	std::cout << "----------------------------------------------------"<< std::endl;
 	// std::cout << "running invert" << std::endl;
-	// ::iter(const_int_array, 5, &::invert);
+	// ::iter(const_double_array, 5, &::invert);
 	std::cout << "----------------------------------------------------"<< std::endl;
-	::iter(const_int_array, 5, &::print);
+	::iter(const_double_array, 5, &::print);
 	std::cout << std::endl;
 	return 0;
 }
