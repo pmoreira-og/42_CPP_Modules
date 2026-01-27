@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 13:01:58 by pmoreira          #+#    #+#             */
-/*   Updated: 2026/01/27 13:37:58 by pmoreira         ###   ########.fr       */
+/*   Updated: 2026/01/27 13:41:32 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void identify(Base *p)
 	else if (dynamic_cast<C*>(p))
 		id = "C";
 	else
-		id = "None";
+		id = "Invalid";
 	std::cout << "Base * has been identified as: ";
 	std::cout << id << std::endl;
 }
