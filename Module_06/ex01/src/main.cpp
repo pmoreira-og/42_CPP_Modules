@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 14:56:49 by pmoreira          #+#    #+#             */
-/*   Updated: 2026/01/27 12:46:02 by pmoreira         ###   ########.fr       */
+/*   Updated: 2026/01/27 12:49:26 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 int main(int ac, char const *av[])
 {
+	char *endptr = NULL;
+
 	if (ac != 2)
 	{
 		std::cout << USAGE << std::endl;
 		return (2);
 	}
-	long value = strtol(av[1], NULL, 10);
-	if (value < std::numeric_limits<int>::min() || value > std::numeric_limits<int>::max())
+	long value = strtol(av[1], &endptr, 10);
+	if (*endptr || value < std::numeric_limits<int>::min() || value > std::numeric_limits<int>::max())
 	{
 		std::cout << "Invalid integer value" << std::endl;
 		return (1);
