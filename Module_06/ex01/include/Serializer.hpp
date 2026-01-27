@@ -6,15 +6,22 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 14:19:57 by pmoreira          #+#    #+#             */
-/*   Updated: 2026/01/26 14:34:37 by pmoreira         ###   ########.fr       */
+/*   Updated: 2026/01/27 12:47:07 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include "Data.hpp"
-#include <cstdint>
+#include <stdint.h>
+#include <limits>
+#include <stdlib.h>
+struct Data
+{
+	int	value;
+};
+
+#define USAGE "Usage: ./serializer <integer>"
 
 class Serializer
 {

@@ -28,7 +28,7 @@ SRC = src
 DIR_GENERAL = .
 
 # === FILES ===
-SRC_GENERAL = 
+SRC_GENERAL = Serializer.cpp main.cpp
 
 SRCS_DIR =	$(addprefix $(SRC)/, $(addprefix $(DIR_GENERAL)/, $(SRC_GENERAL)))
 
