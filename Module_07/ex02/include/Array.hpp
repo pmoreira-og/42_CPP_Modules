@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 16:40:24 by pmoreira          #+#    #+#             */
-/*   Updated: 2026/01/27 17:03:09 by pmoreira         ###   ########.fr       */
+/*   Updated: 2026/01/28 17:10:25 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,7 @@ class Array
 		Array(unsigned int const n);
 		Array(Array const & og);
 		Array & operator=(Array const & other);
+		T & operator[](unsigned int index);
 		~Array();
+		unsigned int size() const;
 };
-
-Array::Array() : _array()
-{
-}
-
-Array::~Array()
-{
-}
