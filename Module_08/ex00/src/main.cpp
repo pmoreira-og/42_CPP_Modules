@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 15:34:19 by pmoreira          #+#    #+#             */
-/*   Updated: 2026/02/18 13:26:09 by pmoreira         ###   ########.fr       */
+/*   Updated: 2026/03/23 14:05:45 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <vector>
 #include <iomanip>
 
-#define SIZE 10
+#define SIZE 7
 
 int main()
 {

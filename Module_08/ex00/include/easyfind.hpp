@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 15:34:17 by pmoreira          #+#    #+#             */
-/*   Updated: 2026/02/18 14:12:15 by pmoreira         ###   ########.fr       */
+/*   Updated: 2026/03/23 14:03:11 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ template <typename T>
 void	containerPrinter(T container)
 {
 	int	index = 0;
-	for (typename T::iterator i = container.begin(); container.end(); i++)
+
+	for (typename T::iterator i = container.begin(); i < container.end(); i++)
 	{
 		std::cout << "[" << index << "] :" << *i << std::endl;
+		index++;
 	}
 }
 
