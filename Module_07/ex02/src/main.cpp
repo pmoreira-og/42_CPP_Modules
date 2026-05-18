@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 16:40:13 by pmoreira          #+#    #+#             */
-/*   Updated: 2026/01/28 17:28:51 by pmoreira         ###   ########.fr       */
+/*   Updated: 2026/05/18 16:48:02 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int main()
 {
-	Array<double> numbers(SIZE);
+	const Array<double> numbers(SIZE);
 
 	std::cout << std::fixed << std::setprecision(1) << std::endl;
 

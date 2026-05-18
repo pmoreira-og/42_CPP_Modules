@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 16:45:45 by pmoreira          #+#    #+#             */
-/*   Updated: 2026/01/28 17:30:02 by pmoreira         ###   ########.fr       */
+/*   Updated: 2026/05/18 16:56:15 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ Array<T> & Array<T>::operator=(Array const & other)
 }
 
 template <typename T>
-T & Array<T>::operator[](unsigned int index)
+T & Array<T>::operator[](unsigned int index) const
 {
 	if (index >= this->size())
 		throw (std::out_of_range("index requested is out of range."));
