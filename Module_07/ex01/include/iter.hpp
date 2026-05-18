@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 15:34:23 by pmoreira          #+#    #+#             */
-/*   Updated: 2026/01/27 15:52:13 by pmoreira         ###   ########.fr       */
+/*   Updated: 2026/05/18 15:51:15 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 
 #include <iostream>
 #include <limits>
+
+template <typename T, typename C>
+void iter(T *array, const unsigned int len, void (*func)(C & item))
+{
+	for (unsigned int i = 0; i < len; i++)
+	{
+		func(array[i]);
+	}
+}
 
 template <typename T>
 void iter(T *array, const unsigned int len, void (*func)(T & item))
