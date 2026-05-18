@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 14:56:49 by pmoreira          #+#    #+#             */
-/*   Updated: 2026/01/27 12:49:26 by pmoreira         ###   ########.fr       */
+/*   Updated: 2026/05/18 10:48:02 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int main(int ac, char const *av[])
 
 	std::cout << "&data: " << &data << std::endl;
 	std::cout << "raw :" << raw << std::endl;
-	std::cout << "deserialize of raw: " << Serializer::deserialize(raw) << std::endl;
+	std::cout << "deserialize of raw: " << Serializer::deserialize(raw);
+	std::cout << " -> value: " << Serializer::deserialize(raw)->value << std::endl;
 	return (0);
 }
