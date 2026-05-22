@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 16:45:45 by pmoreira          #+#    #+#             */
-/*   Updated: 2026/05/18 16:56:15 by pmoreira         ###   ########.fr       */
+/*   Updated: 2026/05/22 13:36:25 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ Array<T>::Array() : _array(new T[0]), _size(0)
 template <typename T>
 Array<T>::Array(unsigned int n) : _array(new T[n]), _size(n)
 {
+	for (unsigned int i = 0; i < n; i++)
+	{
+		this->_array[i] = 0;
+	}
 }
 
 template <typename T>

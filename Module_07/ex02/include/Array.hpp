@@ -6,13 +6,14 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 16:40:24 by pmoreira          #+#    #+#             */
-/*   Updated: 2026/05/18 16:47:45 by pmoreira         ###   ########.fr       */
+/*   Updated: 2026/05/22 13:44:16 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <stdexcept>
 
 template <typename T>
 class Array
